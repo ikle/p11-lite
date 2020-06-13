@@ -17,12 +17,12 @@
 #include <p11-kit/pkcs11.h>
 
 #define P11_LITE_DEFINE(name, ...) \
-static inline ck_rv_t p11_##name (struct ck_function_list *o, __VA_ARGS__)
+static inline ck_rv_t p11_##name (const struct ck_function_list *o, __VA_ARGS__)
 
-#define P11_LITE_DEFINE_S(name, ...)					\
-static inline ck_rv_t							\
-p11_##name (struct ck_function_list *o, ck_session_handle_t session,	\
-	    __VA_ARGS__)
+#define P11_LITE_DEFINE_S(name, ...)			\
+static inline ck_rv_t					\
+p11_##name (const struct ck_function_list *o,		\
+	    ck_session_handle_t session, __VA_ARGS__)
 
 /* General purpose functions */
 
