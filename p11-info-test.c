@@ -72,6 +72,13 @@ void show_counts (const char *prefix, unsigned long min, unsigned long max)
 #define CKM_GOSTR3411			0x1210
 #endif
 
+#ifndef CKM_DSA_SHA224
+#define CKM_DSA_SHA224			0x0013
+#define CKM_DSA_SHA256			0x0014
+#define CKM_DSA_SHA384			0x0015
+#define CKM_DSA_SHA512			0x0016
+#endif
+
 const char *p11_get_algo_name (unsigned long m)
 {
 	switch (m) {
@@ -81,21 +88,68 @@ const char *p11_get_algo_name (unsigned long m)
 	case CKM_MD5_RSA_PKCS:			return "MD5 + RSA";
 	case CKM_SHA1_RSA_PKCS:			return "SHA1 + RSA";
 	case CKM_RIPEMD160_RSA_PKCS:		return "RIPEMD160 + RSA";
+	case CKM_RSA_PKCS_OAEP:			return "RSA + OAEP";
+	case CKM_SHA1_RSA_PKCS_PSS:		return "SHA1 + RSA-PSS";
+	case CKM_DSA_KEY_PAIR_GEN:		return "DSA key pair gen";
 	case CKM_DSA:				return "DSA";
+	case CKM_DSA_SHA1:			return "SHA1 + DSA";
+	case CKM_DSA_SHA224:			return "SHA224 + DSA";
+	case CKM_DSA_SHA256:			return "SHA256 + DSA";
+	case CKM_DSA_SHA384:			return "SHA384 + DSA";
+	case CKM_DSA_SHA512:			return "SHA512 + DSA";
 	case CKM_DH_PKCS_KEY_PAIR_GEN:		return "DH key pair gen";
+	case CKM_DH_PKCS_DERIVE:		return "DH derive";
+	case CKM_SHA256_RSA_PKCS_PSS:		return "SHA256 + RSA-PSS";
+	case CKM_SHA384_RSA_PKCS_PSS:		return "SHA384 + RSA-PSS";
+	case CKM_SHA512_RSA_PKCS_PSS:		return "SHA512 + RSA-PSS";
+	case CKM_SHA224_RSA_PKCS:		return "SHA224 + RSA";
+	case CKM_SHA224_RSA_PKCS_PSS:		return "SHA224 + RSA-PSS";
+	case CKM_DES_KEY_GEN:			return "DES key gen";
+	case CKM_DES_ECB:			return "DES";
+	case CKM_DES_CBC:			return "DES-CBC";
+	case CKM_DES_CBC_PAD:			return "DES-CBC-PAD";
+	case CKM_DES2_KEY_GEN:			return "DES2 key gen";
+	case CKM_DES3_KEY_GEN:			return "DES3 key gen";
+	case CKM_DES3_ECB:			return "DES3";
+	case CKM_DES3_CBC:			return "DES3-CBC";
+	case CKM_DES3_CBC_PAD:			return "DES3-CBC-PAD";
 	case CKM_MD5:				return "MD5";
+	case CKM_MD5_HMAC:			return "MD5 HMAC";
 	case CKM_SHA_1:				return "SHA1";
+	case CKM_SHA_1_HMAC:			return "SHA1 HMAC";
 	case CKM_RIPEMD128:			return "RIPEMD128";
 	case CKM_RIPEMD160:			return "RIPEMD16";
 	case CKM_SHA256:			return "SHA256";
+	case CKM_SHA256_HMAC:			return "SHA256 HMAC";
+	case CKM_SHA224:			return "SHA224";
+	case CKM_SHA224_HMAC:			return "SHA224 HMAC";
 	case CKM_SHA384:			return "SHA384";
+	case CKM_SHA384_HMAC:			return "SHA384 HMAC";
 	case CKM_SHA512:			return "SHA512";
+	case CKM_SHA512_HMAC:			return "SHA512 HMAC";
 	case CKM_SHA256_RSA_PKCS:		return "SHA256 + RSA";
 	case CKM_SHA384_RSA_PKCS:		return "SHA384 + RSA";
 	case CKM_SHA512_RSA_PKCS:		return "SHA512 + RSA";
+	case CKM_EC_KEY_PAIR_GEN:		return "EC key pair gen";
+	case CKM_ECDSA:				return "ECDSA";
+	case CKM_ECDH1_DERIVE:			return "ECDH1 derive";
+	case CKM_AES_KEY_GEN:			return "AES key gen";
+	case CKM_AES_ECB:			return "AES";
+	case CKM_AES_CBC:			return "AES-CBC";
+	case CKM_AES_CBC_PAD:			return "AES-CBC-PAD";
+	case CKM_DES_ECB_ENCRYPT_DATA:		return "DES encrypt data";
+	case CKM_DES_CBC_ENCRYPT_DATA:		return "DES-CBC encrypt data";
+	case CKM_DES3_ECB_ENCRYPT_DATA:		return "DES3 encrypt data";
+	case CKM_DES3_CBC_ENCRYPT_DATA:		return "DES3-CBC encrypt data";
+	case CKM_AES_ECB_ENCRYPT_DATA:		return "AES encrypt data";
+	case CKM_AES_CBC_ENCRYPT_DATA:		return "AES-CBC encrypt data";
 	case CKM_GOSTR3410_KEY_PAIR_GEN:	return "GOSTR3410 key pair gen";
 	case CKM_GOSTR3410:			return "GOSTR3410";
 	case CKM_GOSTR3411:			return "GOSTR3411";
+	case CKM_DSA_PARAMETER_GEN:		return "DSA param gen";
+	case CKM_DH_PKCS_PARAMETER_GEN:		return "DH param gen";
+	case CKM_AES_KEY_WRAP:			return "AES key wrap";
+	case CKM_AES_KEY_WRAP_PAD:		return "AES-PAD key wrap";
 	}
 
 	return NULL;
