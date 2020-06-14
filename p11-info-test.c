@@ -259,7 +259,7 @@ static void slot_info (const struct ck_function_list *o, ck_slot_id_t slot)
 	printf ("        description: %.64s\n",
 		chomp (si.slot_description, 64));
 #endif
-	show_version ("        stol hw", &si.hardware_version);
+	show_version ("        slot hw", &si.hardware_version);
 	show_version ("        slot fw", &si.firmware_version);
 	show_flags ("        flags", slot_flags, si.flags);
 
