@@ -118,7 +118,7 @@ const char *p11_get_algo_name (unsigned long m)
 	case CKM_SHA_1:				return "SHA1";
 	case CKM_SHA_1_HMAC:			return "SHA1 HMAC";
 	case CKM_RIPEMD128:			return "RIPEMD128";
-	case CKM_RIPEMD160:			return "RIPEMD16";
+	case CKM_RIPEMD160:			return "RIPEMD160";
 	case CKM_SHA256:			return "SHA256";
 	case CKM_SHA256_HMAC:			return "SHA256 HMAC";
 	case CKM_SHA224:			return "SHA224";
