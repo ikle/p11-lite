@@ -82,7 +82,7 @@ void show_counts (const char *prefix, unsigned long min, unsigned long max)
 const char *p11_get_algo_name (unsigned long m)
 {
 	switch (m) {
-	case CKM_RSA_PKCS_KEY_PAIR_GEN:	
+	case CKM_RSA_PKCS_KEY_PAIR_GEN:		return "RSA key pair gen";
 	case CKM_RSA_PKCS:			return "RSA";
 	case CKM_RSA_X_509:			return "RSA X.509";
 	case CKM_MD5_RSA_PKCS:			return "MD5 + RSA";
