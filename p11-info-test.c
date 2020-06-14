@@ -116,6 +116,7 @@ static struct flag_map algo_flags[] = {
 	{CKF_UNWRAP,		"unwrap"},
 	{CKF_DERIVE,		"derive"},
 	{CKF_EXTENSION,		"extension"},
+	{}
 };
 
 static void show_algo (const struct ck_function_list *o, ck_slot_id_t slot,
@@ -192,6 +193,7 @@ static struct flag_map token_flags[] = {
 	{CKF_SO_PIN_LOCKED,			"so pin locked"},
 	{CKF_SO_PIN_TO_BE_CHANGED,		"so pin need change"},
 	{CKF_ERROR_STATE,			"error"},
+	{}
 };
 
 static void token_info (const struct ck_function_list *o, ck_slot_id_t slot)
@@ -237,6 +239,7 @@ static struct flag_map slot_flags[] = {
 	{CKF_TOKEN_PRESENT,	"token present"},
 	{CKF_REMOVABLE_DEVICE,	"removable"},
 	{CKF_HW_SLOT,		"hw"},
+	{}
 };
 
 static void slot_info (const struct ck_function_list *o, ck_slot_id_t slot)
