@@ -155,6 +155,12 @@ const char *p11_get_algo_name (unsigned long m)
 	return NULL;
 }
 
+#ifndef CKF_EC_F_P
+#define CKF_EC_F_P		0x00100000ul
+#define CKF_EC_NAMEDCURVE	0x00800000ul
+#define CKF_EC_UNCOMPRESS	0x01000000ul
+#endif
+
 static struct flag_map algo_flags[] = {
 	{CKF_HW,		"hw"},
 	{CKF_ENCRYPT,		"encrypt"},
@@ -169,6 +175,9 @@ static struct flag_map algo_flags[] = {
 	{CKF_WRAP,		"wrap"},
 	{CKF_UNWRAP,		"unwrap"},
 	{CKF_DERIVE,		"derive"},
+	{CKF_EC_F_P,		"EC Fp"},
+	{CKF_EC_NAMEDCURVE,	"EC named curve"},
+	{CKF_EC_UNCOMPRESS,	"EC uncompress"},
 	{CKF_EXTENSION,		"extension"},
 	{}
 };
