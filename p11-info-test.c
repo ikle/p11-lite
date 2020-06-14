@@ -37,7 +37,7 @@ struct flag_map {
 static void show_version (const char *prefix, const struct ck_version *v)
 {
 	if (v->major != 0 && v->minor != 0)
-		printf ("%s: %u.%u", prefix, v->major, v->minor);
+		printf ("%s: %u.%u\n", prefix, v->major, v->minor);
 }
 
 static void show_flags (const char *prefix, const struct flag_map *map,
